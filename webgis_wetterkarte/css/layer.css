@@ -1,0 +1,72 @@
+/* Toggle Layer-Übersicht */
+.layer-control {
+    font-size: 35px;
+    background-color: #333;
+    color: #818181; 
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 7%;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1000; 
+  }
+
+.layer-control:hover {
+    color: #f1f1f1;
+}
+
+  /* Triangle */
+.layer-options:before {
+    content: "";
+    position: absolute;
+    top: -10px;  
+    left: 50%;   
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #333;  
+}
+
+/* Layerdiv */
+.layer-options {
+    display: none;
+    width:135px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #333;
+    color: #818181; 
+    position: absolute;
+    top: 120%;   
+    left: 50%;   
+    transform: translateX(-50%);  
+    flex-direction: column;
+}
+
+/* Überschrift */
+.layer-options strong {
+    font-size: 12px; 
+    color: white;  
+    margin-bottom: 10px;
+}
+
+/* Div der Baselayer/Overlay */
+.layer-options .layer-set {
+    display: flex;  
+    align-items: center; 
+    margin-bottom: 0px; 
+}
+
+/* Div der Baselayer/Overlay */
+.layer-options hr {
+    margin: 10px 0;  
+}
+
+/* img-classe */
+.layer-options img {
+    margin: 5px; 
+    width: 60px; 
+    height: 60px;  
+    border-radius: 10px; 
+}
+  

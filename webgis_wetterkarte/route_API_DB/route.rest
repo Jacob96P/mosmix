@@ -1,0 +1,8 @@
+# Für API-Abfragen
+
+GET http://localhost:8083
+
+###
+
+GET http://localhost:8083/get
+

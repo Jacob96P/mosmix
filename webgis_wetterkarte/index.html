@@ -1,0 +1,156 @@
+<p>
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Törnplaner - WebGIS 2023</title>
+      <script type="module" src="./main.js"></script>
+  </head>
+
+  <body>
+    <!-- Layerauswahl -->
+    <div id="layerControl" class="layer-control" title="Layerauswahl">
+      <i id="toggleControl" class="fa-solid fa-layer-group"></i>
+      <div id="layerOptions" class="layer-options">
+        <strong>Kartentyp</strong><br>
+        <div class="layer-set">
+          <img class="img-base" id="baseLayer1" src="images/osm.svg" alt="Base Layer 1" title="Base Layer 1"/>
+          <img class="img-base" id="baseLayer2" src="images/satellite.svg" alt="Base Layer 2" title="Base Layer 2"/>
+        </div>
+        <hr>
+        <strong>Kartendetails</strong><br>
+        <div class="layer-set">
+          <img class="img-overlay" id="overlay1" src="images/OpenSeaMap.svg" alt="Overlay 1" title="Overlay 1"/>
+          <img class="img-overlay" id="wetter-overlay" src="images/weather.svg" alt="Overlay 2" title="Overlay 2"/>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Wetterauswahl -->
+    <div id="wetterOptions" class="wetter-options">
+      <div class="wetter-set">
+        <img class="img-base" id="temp-button" src="images/temp_icon.svg" alt="Temp Button" title="Temperatur"/>
+        <img class="img-base" id="niederschlag-button" src="images/niederschlag_icon.svg" alt="Niederschlag Button" title="Niederschlag"/>
+        <img class="img-base" id="wind-button" src="images/wind_icon.svg" alt="Windgeschwindigkeit Button" title="Windgeschwindigkeit"/>
+      </div>
+    </div>
+
+    <!-- Zeitauswahl -->
+    <div id="zeitauswahl">
+      <div id="zeitpunkte" class="zeitpunkte"></div>
+    </div>
+
+    <!-- Legende (Colorbar) -->
+    <div id="layerLegend" class="layer-legend"></div>
+
+    <!-- Törnplaner-Button -->
+    <div id="toernControl" class="toern-control" title="Törnplaner">
+      <i id="toggleToern" class="fa-solid fa-ship"><span id="toern-title"></span></i>
+    </div>
+    <!-- Törnplaner-Fenster -->
+    <div id="toernOptions" class="toern-options">
+      <!-- Törns-Listbox -->
+      <h1>Meine Törns</h1>
+      <select id="toerns" size="7" class="waypoints"></select>
+      <!-- Törns-Buttons -->
+      <div>
+        <button id="toern-add" type="button" class="btn btn-add" 
+                    title="Neuer Törn"><i class="fa fa-fw fa-plus-square"></i>
+                  </button>
+        <button id="toern-delete" type="button" class="btn btn-delete" 
+                    title="Törn Löschen"><i class="fa fa-fw fa-minus-square"></i>
+                  </button>
+        <button id="toern-edit" type="button" class="btn btn-edit" 
+                    title="Routen anzeigen"><i class="fa fa-fw fa-pen-to-square"></i>
+                  </button>
+      </div>
+      <!-- Routen Listbox -->
+      <h2>Routen</h2>
+      <select id="routes" size="7" class="waypoints"></select>
+      <!-- Routen-Buttons -->
+      <div>
+        <button id="routes-add" type="button" class="btn btn-add" 
+                    title="Route hinzufügen"><i class="fa fa-fw fa-plus-square"></i>
+                  </button>
+        <button id="routes-delete" type="button" class="btn btn-delete" 
+                    title="Route löschen"><i class="fa fa-fw fa-minus-square"></i>
+                  </button>
+        <button id="route-edit" type="button" class="btn btn-edit" 
+                    title="Route bearbeiten"><i class="fa fa-fw fa-pen-to-square"></i>
+                  </button>
+      </div>
+    </div>
+
+    <!-- Routenplaner-Fenster -->
+    <div id="routeOptions" class="route-options">
+      <!-- Button zum Schließen -->
+      <button id="close-routeOptions" type="button" class="route-options-close"><i class="fa fa-fw fa-xmark"></i></button>
+      <!-- Dynamische Tabelle mit Informationen zur Route -->
+      <form>
+        <div>
+          <button id="save-route" type="button" class="btn btn-save" 
+                    title="Route speichern"><i class="fa fa-fw fa-floppy-disk"></i>
+                  </button>
+        <button id="routes-zoom" type="button" class="btn btn-primary" 
+                    title="Auf Route zoomen"><i class="fa fa-fw fa-magnifying-glass"></i>
+                  </button>
+        <button id="remove-latest" type="button" class="btn btn-remove-segment" 
+                  title="Letzen Abschnitt entfernen"><i class="fa fa-fw fa-eraser"></i>
+                </button>
+        <button id="clear-features" type="button" class="btn btn-remove-all" 
+                title="Alle Abschnitte entfernen"><i class="fa fa-fw fa-trash"></i>
+              </button>
+        <button id="sm-km-toggle" type="button" class="btn btn-primary" 
+                title="Einheit -> Seemeilen"><i class="fa fa-fw fa-asymmetrik"></i>
+              </button>
+        </div>
+      </form>
+      <!-- Distanz der ganzen Route -->
+      <table style="color:aliceblue">
+        <tr>
+          <td>Gesamtdistanz: </td>
+          <td id="routes-distance"> - - </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Karte -->
+    <div id="main" class="main">
+      <div id="map" class="map"></div>
+    </div>
+
+    <!-- Benachrichtigungen -->
+    <div id="greeting" class="greeting">
+    </div>
+
+    <!-- Login-Fenster -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+          <label for="username">Username:</label>
+          <input type="text" id="usernameInput" />
+          <button id="loginBtn">Login</button>
+      </div>
+    </div>
+
+    <!-- Logout Button -->
+    <div id="logoutControl" class="logout-control" title="Logout">
+      <i id="logoutButton" class="fa fa-fw fa-right-from-bracket"></i>
+    </div>
+
+    <!-- Live-Koordinaten des Cursers -->
+    <div class="coordinate-box">
+      <i id = "mouseCoord4326"></i>
+    </div>
+
+    <!-- Maßstab -->
+    <div id="scaleBarOptions">
+    </div>
+
+    <!-- GetFeatureInfo -->
+    <div id="info" class="featureInfo"></div>
+  </body>
+</html>

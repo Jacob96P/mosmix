@@ -1,0 +1,57 @@
+/* Login Blocker */
+.modal {
+    display: display-box; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1; 
+}
+
+.modal-content {
+    background-color:aliceblue;
+    border-radius: 10px;
+    margin: 20% auto; 
+    padding: 20px;
+    border: 2px solid #1a1818;
+    width:fit-content;
+    text-align: center;
+}
+
+button {
+    margin-top: 10px;
+}
+
+/* Benachrichtigungen */
+.greeting {
+    display: none;
+    position: fixed;
+    top: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: #000; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border-radius: 8px;
+    font-size: 1.2em;
+    z-index: 1000;
+  }
+  
+/* Logout */
+.logout-control {
+    font-size: 25px;
+    background-color: #eceaea;
+    color: #333; 
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1000; 
+}
+.logout-control:hover {
+    color: #ca2020;
+}

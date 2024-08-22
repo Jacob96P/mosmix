@@ -1,0 +1,65 @@
+/* Toernfenster */
+
+/* Törnbutton */
+.toern-control {
+    font-size: 35px;
+    background-color: #333;
+    color: #818181; 
+    cursor: pointer;
+    position: absolute;
+    top: 2%;
+    left: 1%;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1000; 
+}
+.toern-control:hover {
+    color: #f1f1f1;
+}
+#toern-Title {
+    font-family: Arial, sans-serif;
+}
+
+/* Route-Bar */
+.toern-options:before {
+    content: "";
+    position: absolute;
+    top: -2%;  
+    left: 7.5%;   
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #333;  
+}
+
+/* Routediv */
+.toern-options {
+    position: absolute;
+    display: none;
+    width: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 15px;
+    background-color: #333;
+    color: #818181;
+    top: 9.9%;
+    left: 1%;
+    flex-direction: column;
+    z-index: 999; 
+}
+
+.toern-options h1 {
+    font-size: 1.2em;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.toern-options h2 {
+    font-size: 1.2em;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    color: white;
+}

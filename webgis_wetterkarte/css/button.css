@@ -1,0 +1,76 @@
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.btn-save {
+    color: #fff;
+    background-color: #28A745;
+    border-color: #28A745;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #e7481b;
+    border-color: #e7481b;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.btn-add {
+    color: #fff;
+    background-color: #d8c600;
+    border-color: #d8c600;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.btn-edit {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.btn-remove-segment {
+    color: #fff;
+    background-color: #fcb51b;
+    border-color: #fcb51b;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.btn-remove-all {
+    color: #fff;
+    background-color: #f06745;
+    border-color: #f06745;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.waypoints {
+    width: 275px;
+    margin-bottom: 10px;;
+}

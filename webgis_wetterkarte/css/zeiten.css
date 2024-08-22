@@ -1,0 +1,38 @@
+#zeitauswahl {
+    position:absolute;
+    bottom: 5%; /* Abstand vom oberen Rand */
+    left: 50%; /* Abstand vom rechten Rand */
+    transform: translateX(-50%); /* Verschiebung um die Hälfte der Breite nach links */
+    max-width: 50%; /* Maximal 50% der Bildschirmbreite */
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    margin: 2px;
+    background-color: #333;
+    padding: 5px;
+    border-radius: 8px;
+    z-index: 1000; /* Über andere Elemente legen */
+}
+
+#zeitpunkte {
+    display: flex;
+    overflow-x: auto;
+    padding: 2px;
+    margin: 2px;
+}
+
+.zeitpunkt {
+    padding: 2px;
+    margin: 2px;
+    cursor: pointer;
+    background-color: #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.zeitpunkt.active {
+    background-color: #ffa500;
+    font-weight: bold;
+}

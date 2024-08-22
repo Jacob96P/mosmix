@@ -1,0 +1,8 @@
+parameter_name,einheit,einheit_angepasst,parameter_tabelle,parameter_mosmix_dwd
+N,%,%,wolkenbedeckung,Wolkenbedeckung
+RR1c,kg/m2,mm,niederschlag_letzte_stunde,Niederschlag (letzte Stunde)
+TTT,K,Grad C,temperatur,Temperatur
+FX1,m/s,m/s,windboen_letzte_stunde,Windboen (letzte Stunde)
+FF,m/s,m/s,windgeschwindigkeit,Windgeschwindigkeit
+DD,Grad,Grad,windrichtung,Windrichtung
+PPPP,Pa,hPa,druck_auf_meereshoehe,Druck (auf Meereshoehe)

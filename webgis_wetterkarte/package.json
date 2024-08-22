@@ -1,0 +1,17 @@
+{
+  "name": "webgis_wetterkarte",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.3.3"
+  },
+  "dependencies": {
+    "@turf/turf": "^7.0.0",
+    "ol": "latest",
+    "uuid": "^10.0.0"
+  }
+}

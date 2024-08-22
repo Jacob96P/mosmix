@@ -1,0 +1,77 @@
+/* Routenfenster */
+
+/* Routediv */
+.route-options {
+    position: absolute;
+    display: none;
+    width: auto;
+    padding: 2% 1% 1% 1%;
+    border-radius: 10px;
+    background-color: #333;
+    color: #818181;
+    top: 2%; 
+    left: 28%; 
+    flex-direction: column;
+    z-index: 999; 
+}
+
+
+/* Close-Button */
+.route-options-close {
+    top: 1%;
+    right: 1%;
+    border-radius: 5px;
+    border-width: 1.5px;
+    border-style:double;
+    border-color: #333;
+    font-size: 0.875rem;
+    color:white;
+    background-color: #737272;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 18px;
+}
+.route-options-close:hover {
+    border-width: 1.5px;
+    border-style:double;
+    border-color: white;
+    background-color:red;
+    cursor: pointer;
+}
+
+/* Koordinatentabelle */
+.route-table-div {
+    overflow-x:hidden;
+    overflow-y: scroll;
+    scrollbar-gutter:inherit;
+    border-radius: 10px 10px 0px 0px;
+    max-height: 207px;
+    margin-bottom: 5px;
+    background-color: #c9c7c7;
+}
+.route-table {
+    table-layout: auto;
+    border-collapse: collapse; 
+    width: 100%;
+}
+
+.route-table th {
+    top: 0px;
+    position: sticky;
+    background-color: #f2f2f2;
+    padding-bottom: 2px;
+    border-bottom: black 1px solid;
+    width: auto;
+}
+
+.route-table td {
+    font-size: 14;
+    padding: 7px 10px;
+    text-align: center;
+    border-bottom: black 1px solid;
+}
+
+route-table .absorbing-column {
+    width: 100%;
+}
